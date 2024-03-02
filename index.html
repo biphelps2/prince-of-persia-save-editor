@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" lang="en-au">
+<head>
+    <title>Prince of Persia MS-DOS Save Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <meta property="og:title" content="Prince of Persia MS-DOS Save Editor" />
+    <meta property="og:description" content="A tool for editing save files for Prince of Persia for MS-DOS." />
+    <meta property="og:image" content="https://biphelps2.github.io/prince-of-persia-save-editor/images/pop-level-10.png" />
+</head>
+<body>
+
+    <section id="header">
+        <h1>Prince of Persia MS-DOS Level Editor</h1>
+        <noscript>
+            <div style="margin-top: 10px; border: 3px dashed red; width: 500px; padding-left: 10px; padding-right: 10px; background: white;">
+                <p><strong>This tool depends heavily on JavaScript to run.</strong> Sorry for the inconvenience! If you've chosen to disable JavaScript, you can <a href="pop.js">review the source here</a> before choosing to enable for this site.</p>
+                <p>In either case, the description of the file structure and other notes can be read below. Thanks for visiting!</p>
+            </div>
+            <style>
+                .upper-form {
+                    display: none;
+                }
+            </style>
+        </noscript>
+        <div class="upper-form">
+            <p>Choose a PRINCE.SAV file to modify:</p>
+
+            <div class="action-buttons">
+                <input type="file" id="level-upload" />
+                <div class="other-actions">
+                    <button id="download-file">Download changes</button>
+                    <button id="reset-form">Reset form</button>
+                    <button class="new-file">New file</button>
+                </div>
+            </div>
+
+            <div id="newfilesection">
+                <p>Or start with a new file:</p>
+                <button class="new-file">New file</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="all-file-based-content">
+        <form id="myform">
+
+            <section class="columns">
+                <div class="left">
+                    <fieldset id="fields-time">
+                        <label style="display: block;">
+                            Minutes left<br>
+                            <input id="minutes" type="number" name="minutes" value="" />
+                        </label>
+                        <label style="display: block;">
+                            Seconds left<br>
+                            <input id="seconds" type="number" name="seconds" value="" />
+                        </label>
+                    </fieldset>
+                    <fieldset>
+                        <label style="display: block;">
+                            Current level (1-15)<br>
+                            <input id="level" type="number" name="level" value="" />
+                        </label>
+                        <label style="display: block;">
+                            Health bars<br>
+                            <input id="health" type="number" name="health" value="" />
+                        </label>
+                    </fieldset>
+                </div>
+            </section>
+
+            <div class="image-container">
+                <img alt="The start screen for the currently selected level, as shown in the actual game." id="pop-level-img" src="">
+                <img alt="" class="minutes-left" src="images/pop-minutes-left.png">
+            </div>
+        </form>
+    </section>
+
+    <div class="footer">
+    </div>
+
+    <section class="footnotes" style="margin:auto; margin-bottom: calc(100vh - 50px);">
+        <h2>Notes</h2>
+        <p>
+            By splerp. <a target="_blank" href="https://github.com/biphelps2/prince-of-persia-save-editor">The source code can be found on GitHub here.</a> Enjoy!
+        </p>
+
+        <h3>File format details</h3>
+        <img
+                style="width: 100%; image-rendering: optimizeQuality;"
+                alt="" src="images/pop-diagram.png">
+        <p>The save file is extremely simple - 4 16-bit values:</p>
+        <ol>
+            <li>Minutes remaining</li>
+            <li>Seconds remaining</li>
+            <li>Current level</li>
+            <li>No. health bars</li>
+        </ol>
+
+        <p>You can also find a list of Prince of Persia save editors on the <a href="https://popuw.com/sge.html">Prince of Persia Unofficial Website</a>.</p>
+
+    </section>
+
+<script src="pop.js"></script>
+</body>
+</html>

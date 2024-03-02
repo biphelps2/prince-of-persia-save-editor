@@ -1,0 +1,230 @@
+
+/* Elements */
+
+body {
+    max-width: 1280px;
+    margin: auto;
+    background: black;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+h2 {
+    margin-bottom: 0;
+}
+
+img, div.minutes {
+    image-rendering: crisp-edges;
+}
+
+input, fieldset {
+    box-sizing: border-box;
+}
+
+fieldset {
+    width: 100%;
+
+    border: 0;
+    margin: 0;
+    padding: 10px;
+}
+
+hr {
+    border: 4px dashed white;
+    margin: 50px;
+}
+
+i.comment {
+    margin-left: 15px;
+    position: relative;
+    display: inline-block;
+    opacity: 0.7;
+}
+
+i.comment::before {
+    content: "# ";
+    position: absolute;
+    left: -15px;
+}
+
+/* Icon after any external links. */
+a[target="_blank"]::after {
+    content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
+    margin: 0 3px 0 5px;
+}
+
+/* Button styling, including for file upload embedded button. */
+button, input::file-selector-button {
+    font-size: 1.2em;
+    padding: 5px 10px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+/* IDs */
+
+#level-upload {
+    background: white;
+    margin-left: 0;
+    width: 350px;
+    padding: 5px;
+
+    margin-right: 10px;
+}
+
+#header {
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+#levelcompletion {
+    width: unset;
+}
+
+#levelcompletion > div {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto auto auto auto auto auto auto auto;
+    grid-auto-flow: column;
+}
+
+#miners {
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+#slotname {
+    width: 100%;
+}
+
+#fields-money label {
+    margin-bottom: 10px;
+}
+
+#fields-money label:last-child {
+    margin-bottom: 0;
+}
+
+#levelcompletion {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#heading-level-completion {
+    margin-top: 0;
+}
+
+#pop-level-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* Classes */
+
+.all-file-based-content, .other-actions {
+    display: none;
+}
+
+.all-file-based-content {
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.footer {
+    margin-bottom: 10px;
+    color: white;
+}
+
+.action-buttons {
+    margin: 20px;
+    margin-left: 0;
+}
+
+.action-buttons .other-actions {
+    margin-left: auto;
+}
+
+.image-container {
+    position: relative;
+}
+
+.torch, .healthpoint, .minutes-left, .minutes {
+    /* JavaScript will set the top and left properties. */
+    position: absolute;
+
+    /*display: none;*/
+    pointer-events: none;
+    user-select: none;
+}
+
+.minutes {
+    background: url("images/pop-numbers.png");
+    background-size: cover;
+    overflow: hidden;
+}
+
+.miner input {
+    display: inline-block;
+}
+
+.tab button {
+    border: none;
+
+    background: white;
+    font-size: 1.1em;
+    margin-right: 5px;
+
+    cursor: pointer;
+    margin-bottom: 10px;
+
+    position: relative;
+    top: 15px;
+    z-index: 0;
+}
+
+.tab button.selected {
+    margin-bottom: -20px;
+
+    z-index: 2;
+    top: 22px;
+}
+
+.columns {
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+/* Appear in front of tabs. */
+.columns .left {
+    z-index: 1;
+}
+
+.columns .right {
+    padding: 0;
+    margin-left: 20px;
+
+    position: relative;
+    top: -30px;
+}
+
+#header, .columns .left, #levelcompletion, .footnotes {
+    background: white;
+    padding: 10px;
+}
+
+/* Elements with a parchment-like border and colouring. */
+/*#header, .columns .left, #levelcompletion, .footnotes  {*/
+/*    border: 24px solid black;*/
+/*    border-image: url('images/map-border.png');*/
+/*    border-image-slice: 8 8 8 8 fill;*/
+/*    border-image-repeat: round;*/
+/*    image-rendering: crisp-edges;*/
+/*}*/
